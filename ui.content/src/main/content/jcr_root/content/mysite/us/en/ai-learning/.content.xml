@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/conf/mysite/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="AI Learning Hub"
+        sling:resourceType="mysite/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="mysite/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mysite/components/container">
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="mysite/components/container"
+                    layout="responsiveGrid">
+                    <hero
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mysite/components/hero"
+                        alignment="center"
+                        alt="AI Learning Hub"
+                        minHeight="400"
+                        fileReference="/content/dam/mysite/ai-tech/hero-future-ai.jpg"
+                        overlayOpacity="0.3">
+                        <title
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="mysite/components/title"
+                            jcr:title="AI Learning Hub"
+                            type="h1"/>
+                        <text
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="mysite/components/text"
+                            text="&lt;p&gt;Explore the fascinating world of Artificial Intelligence and its impact on our future.&lt;/p&gt;"
+                            textIsRich="true"/>
+                    </hero>
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

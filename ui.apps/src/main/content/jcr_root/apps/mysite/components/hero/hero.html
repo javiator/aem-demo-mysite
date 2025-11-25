@@ -4,8 +4,7 @@
     data-sly-test.minHeight="${properties.minHeight || '500'}"
     data-sly-test.overlayOpacity="${properties.overlayOpacity || '0.4'}" />
 
-<section class="cmp-hero" data-cmp-hero-alignment="${alignment}"
-    style="min-height: ${minHeight @ context='styleToken'}px;">
+<section class="cmp-hero" data-cmp-hero-alignment="${alignment}">
 
     <div class="cmp-hero__background" data-sly-test="${hasBackgroundImage}">
         <img class="cmp-hero__background-image" src="${properties.fileReference}" alt="${properties.alt || ''}"

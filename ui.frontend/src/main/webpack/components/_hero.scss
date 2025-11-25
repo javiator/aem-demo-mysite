@@ -1,6 +1,7 @@
 .cmp-hero {
     position: relative;
     width: 100%;
+    min-height: 300px; // Increased to 300px as requested
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -44,7 +45,7 @@
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
-        padding: $spacing-xl;
+        padding: $spacing-sm $spacing-xl; // Reduced vertical padding further
         color: $color-surface;
 
         // Alignment variants
@@ -66,42 +67,43 @@
         // Override child component colors for better contrast on hero
         .cmp-title__text {
             color: $color-surface;
-            font-size: 3rem;
+            font-size: 2.25rem; // Reduced from 3rem
             font-weight: 700;
-            margin-bottom: $spacing-lg;
+            margin-bottom: $spacing-md; // Reduced from $spacing-lg
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 
             @media (max-width: $screen-md) {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
 
             @media (max-width: $screen-sm) {
-                font-size: 2rem;
+                font-size: 1.75rem;
             }
         }
 
         .cmp-text {
             color: $color-surface;
-            font-size: 1.25rem;
-            line-height: 1.6;
-            margin-bottom: $spacing-lg;
+            font-size: 1.125rem; // Reduced from 1.25rem
+            line-height: 1.5;
+            margin-bottom: $spacing-md; // Reduced from $spacing-lg
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 
             p {
                 color: inherit;
+                margin-bottom: 0; // Remove paragraph margin
             }
 
             @media (max-width: $screen-md) {
-                font-size: 1.125rem;
+                font-size: 1rem;
             }
 
             @media (max-width: $screen-sm) {
-                font-size: 1rem;
+                font-size: 0.875rem;
             }
         }
 
         .cmp-button {
-            margin-top: $spacing-md;
+            margin-top: $spacing-sm; // Reduced from $spacing-md
             margin-right: $spacing-sm;
             box-shadow: $shadow-lg;
 

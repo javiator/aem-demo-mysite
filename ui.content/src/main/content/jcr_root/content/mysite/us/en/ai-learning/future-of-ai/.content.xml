@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/conf/mysite/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="The Future of AI"
+        sling:resourceType="mysite/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="mysite/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mysite/components/container">
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="mysite/components/container"
+                    layout="responsiveGrid">
+                    <hero
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mysite/components/hero"
+                        alignment="center"
+                        alt="Future AI Landscape"
+                        fileReference="/content/dam/mysite/ai-tech/hero-future-ai.jpg"
+                        minHeight="600"
+                        overlayOpacity="0.5">
+                        <title
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="mysite/components/title"
+                            jcr:title="The Future of AI"
+                            type="h1"/>
+                        <text
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="mysite/components/text"
+                            text="&lt;p&gt;Exploring the horizon of Artificial General Intelligence and beyond.&lt;/p&gt;"
+                            textIsRich="true"/>
+                    </hero>
+                    <text
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mysite/components/text"
+                        text="&lt;h2&gt;What Lies Ahead?&lt;/h2&gt;&lt;p&gt;As AI continues to evolve, we face new opportunities and challenges. From ethical considerations to the potential of AGI, the future is both exciting and complex.&lt;/p&gt;"
+                        textIsRich="true"/>
+                    <tabs
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mysite/components/tabs">
+                        <item_1
+                            cq:panelTitle="Ethical AI"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Ethical AI"
+                            sling:resourceType="wcm/foundation/components/responsivegrid">
+                            <text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mysite/components/text"
+                                text="&lt;p&gt;Ensuring that AI systems are fair, transparent, and accountable is crucial. We must develop frameworks to prevent bias and ensure AI benefits all of humanity.&lt;/p&gt;"
+                                textIsRich="true"/>
+                        </item_1>
+                        <item_2
+                            cq:panelTitle="AGI"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="AGI"
+                            sling:resourceType="wcm/foundation/components/responsivegrid">
+                            <text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mysite/components/text"
+                                text="&lt;p&gt;Artificial General Intelligence (AGI) represents the next frontier—machines with the ability to understand, learn, and apply knowledge across a wide variety of tasks, much like a human.&lt;/p&gt;"
+                                textIsRich="true"/>
+                        </item_2>
+                        <item_3
+                            cq:panelTitle="Human-AI Collaboration"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Human-AI Collaboration"
+                            sling:resourceType="wcm/foundation/components/responsivegrid">
+                            <text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mysite/components/text"
+                                text="&lt;p&gt;The most powerful future is one where humans and AI work together, leveraging the strengths of both to solve complex global problems.&lt;/p&gt;"
+                                textIsRich="true"/>
+                            <image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mysite/components/image"
+                                fileReference="/content/dam/mysite/ai-tech/hero-future-ai.jpg"
+                                alt="Human AI Collaboration"/>
+                        </item_3>
+                    </tabs>
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

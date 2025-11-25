@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/conf/mysite/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="AI in Application Development"
+        sling:resourceType="mysite/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="mysite/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mysite/components/container">
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="mysite/components/container"
+                    layout="responsiveGrid">
+                    <hero
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mysite/components/hero"
+                        alignment="right"
+                        alt="AI Coding Environment"
+                        fileReference="/content/dam/mysite/ai-tech/hero-app-dev.jpg"
+                        minHeight="600"
+                        overlayOpacity="0.6">
+                        <title
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="mysite/components/title"
+                            jcr:title="AI in App Development"
+                            type="h1"/>
+                        <text
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="mysite/components/text"
+                            text="&lt;p&gt;Accelerating development cycles with intelligent code generation and testing.&lt;/p&gt;"
+                            textIsRich="true"/>
+                    </hero>
+                    <text
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mysite/components/text"
+                        text="&lt;h2&gt;The New Era of Coding&lt;/h2&gt;&lt;p&gt;AI is not replacing developers; it's empowering them. From writing boilerplate code to detecting bugs before deployment, AI tools are making software development faster, safer, and more innovative.&lt;/p&gt;"
+                        textIsRich="true"/>
+                    <accordion
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mysite/components/accordion">
+                        <item_1
+                            cq:panelTitle="Code Generation"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Code Generation"
+                            sling:resourceType="wcm/foundation/components/responsivegrid">
+                            <text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mysite/components/text"
+                                text="&lt;p&gt;AI assistants can generate entire functions or classes based on natural language descriptions, significantly reducing coding time.&lt;/p&gt;"
+                                textIsRich="true"/>
+                            <image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mysite/components/image"
+                                fileReference="/content/dam/mysite/ai-tech/content-app-dev.jpg"
+                                alt="AI Code Generation"/>
+                        </item_1>
+                        <item_2
+                            cq:panelTitle="Automated Testing"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Automated Testing"
+                            sling:resourceType="wcm/foundation/components/responsivegrid">
+                            <text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mysite/components/text"
+                                text="&lt;p&gt;AI-driven testing tools can automatically generate test cases, identify edge cases, and even self-heal broken tests when the UI changes.&lt;/p&gt;"
+                                textIsRich="true"/>
+                        </item_2>
+                        <item_3
+                            cq:panelTitle="Bug Detection"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Bug Detection"
+                            sling:resourceType="wcm/foundation/components/responsivegrid">
+                            <text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mysite/components/text"
+                                text="&lt;p&gt;Advanced static analysis powered by AI can detect complex bugs and security vulnerabilities that traditional tools might miss.&lt;/p&gt;"
+                                textIsRich="true"/>
+                        </item_3>
+                    </accordion>
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

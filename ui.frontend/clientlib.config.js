@@ -65,7 +65,7 @@ module.exports = {
       ...libsBaseConfig,
       name: 'clientlib-site',
       categories: ['mysite.site'],
-      dependencies: ['mysite.dependencies'],
+      dependencies: ['mysite.dependencies', 'mysite.base'],
       assets: {
         // Copy entrypoint scripts and stylesheets into the respective ClientLib
         // directories

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/conf/mysite/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="AI in User Experience"
+        sling:resourceType="mysite/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="mysite/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mysite/components/container">
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="mysite/components/container"
+                    layout="responsiveGrid">
+                    <hero
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mysite/components/hero"
+                        alignment="center"
+                        alt="AI User Experience Interface"
+                        fileReference="/content/dam/mysite/ai-tech/hero-ux.jpg"
+                        minHeight="600"
+                        overlayOpacity="0.5">
+                        <title
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="mysite/components/title"
+                            jcr:title="AI in User Experience"
+                            type="h1"/>
+                        <text
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="mysite/components/text"
+                            text="&lt;p&gt;Designing personalized and predictive interfaces for the next generation.&lt;/p&gt;"
+                            textIsRich="true"/>
+                    </hero>
+                    <text
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mysite/components/text"
+                        text="&lt;h2&gt;Personalization at Scale&lt;/h2&gt;&lt;p&gt;AI enables hyper-personalization, adapting interfaces in real-time to user behavior and preferences. From predictive text to dynamic layout adjustments, AI is making digital experiences more intuitive and engaging.&lt;/p&gt;"
+                        textIsRich="true"/>
+                    <carousel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mysite/components/carousel"
+                        autopauseDisabled="false"
+                        autoplay="true"
+                        delay="5000">
+                        <item_1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="mysite/components/image"
+                            fileReference="/content/dam/mysite/ai-tech/content-ux.jpg"
+                            alt="Happy User with AI Interface"/>
+                        <item_2
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="mysite/components/image"
+                            fileReference="/content/dam/mysite/ai-tech/hero-ux.jpg"
+                            alt="Abstract UX Design"/>
+                    </carousel>
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>
