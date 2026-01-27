@@ -1,0 +1,69 @@
+#!/bin/bash
+
+# AEM Demo MySite - Manual Development Helper
+# Use this when VS Code Dev Containers are unavailable.
+
+CONTAINER_NAME="aem-author"
+COMPOSE_FILE="docker-compose.yml"
+
+show_help() {
+    echo "Usage: ./cn [command]"
+    echo ""
+    echo "Commands:"
+    echo "  start       Start AEM (detached)"
+    echo "  stop        Stop AEM"
+    echo "  restart     Restart AEM"
+    echo "  build       Run Maven build"
+    echo "  shell       Open shell"
+    echo "  logs        View logs"
+    echo "  status      Check status"
+    echo ""
+}
+
+if [ $# -eq 0 ]; then
+    show_help
+    exit 1
+fi
+
+case "$1" in
+    start)
+        echo "🚀 Starting AEM containers..."
+        docker compose -f $COMPOSE_FILE up -d
+        echo "✅ Containers started. Author available at http://localhost:4502"
+        ;;
+    stop)
+        echo "🛑 Stopping AEM containers..."
+        docker compose -f $COMPOSE_FILE down
+        ;;
+    restart)
+        echo "🔄 Restarting..."
+        docker compose -f $COMPOSE_FILE down
+        docker compose -f $COMPOSE_FILE up -d
+        ;;
+    build)
+        echo "🔨 Building project inside container..."
+        # Runs the same build command as the dev container
+        docker exec -it -w /workspaces/aem-demo-mysite $CONTAINER_NAME mvn clean install -PautoInstallPackage
+        ;;
+    build-publish)
+        echo "🔨 Building project inside container..."
+        # Runs the same build command as the dev container
+        # We must override aem.publish.host because 'localhost' inside the author container refers to itself, 
+        # not the publisher container.
+        docker exec -it -w /workspaces/aem-demo-mysite $CONTAINER_NAME mvn clean install -PautoInstallPackagePublish -Daem.publish.host=aem-publisher
+        ;;
+    shell)
+        echo "💻 Connecting to container shell..."
+        docker exec -it $CONTAINER_NAME /bin/bash
+        ;;
+    logs)
+        docker compose -f $COMPOSE_FILE logs -f aem-author
+        ;;
+    status)
+        docker compose -f $COMPOSE_FILE ps
+        ;;
+    *)
+        show_help
+        exit 1
+        ;;
+esac

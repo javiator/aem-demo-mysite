@@ -95,7 +95,7 @@
                     
     
     
-    <aem.host>192.168.0.161</aem.host>
+    <aem.host>localhost</aem.host>
                     
     
     
@@ -103,7 +103,7 @@
                     
     
     
-    <aem.publish.host>192.168.0.161</aem.publish.host>
+    <aem.publish.host>localhost</aem.publish.host>
                     
     
     

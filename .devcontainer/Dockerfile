@@ -3,14 +3,14 @@ FROM eclipse-temurin:17-jdk-jammy AS base
 
 # Install essential development tools
 RUN apt-get update && apt-get install -y \
-    maven \
-    git \
-    curl \
-    wget \
-    gnupg \
-    && curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
-    && apt-get install -y nodejs \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+  maven \
+  git \
+  curl \
+  wget \
+  gnupg \
+  && curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+  && apt-get install -y nodejs \
+  && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Keep environment vars in a file that isn’t committed
 ARG AEM_ADMIN_USER=admin
@@ -24,10 +24,10 @@ ENV TZ=UTC
 WORKDIR /opt/aem
 
 # Copy the AEM quickstart jar
-COPY aem-quickstart-copy.jar /opt/aem/aem-quickstart.jar
+COPY aem-dist/aem-quickstart.jar /opt/aem/aem-quickstart.jar
 
 # The AEM Docker images rely on the license file being present
-COPY aem-license-copy.properties /opt/aem/license.properties
+COPY aem-dist/license.properties /opt/aem/license.properties
 
 # Expose ports (author:4502, publisher:4503, dispatcher:80)
 EXPOSE 4502 4503 80
