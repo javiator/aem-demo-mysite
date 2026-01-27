@@ -1,0 +1,35 @@
+version: "3.9"
+services:
+  aem-author:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    container_name: aem-author
+    environment:
+      - AEM_ADMIN_USER=admin
+      - AEM_ADMIN_PASS=admin
+    ports:
+      - "4502:4502"
+    volumes:
+      - ./:/workspaces/aem-demo-mysite
+      - aem-author-data:/opt/aem/crx-quickstart
+    command: java -jar /opt/aem/aem-quickstart.jar -p 4502 -r author -nointeractive
+
+  aem-publisher:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    container_name: aem-publisher
+    environment:
+      - AEM_ADMIN_USER=admin
+      - AEM_ADMIN_PASS=admin
+    ports:
+      - "4503:4503"
+    volumes:
+      - ./:/workspaces/aem-demo-mysite
+      - aem-publisher-data:/opt/aem/crx-quickstart
+    command: java -jar /opt/aem/aem-quickstart.jar -p 4503 -r publish -nointeractive
+
+volumes:
+  aem-author-data:
+  aem-publisher-data:

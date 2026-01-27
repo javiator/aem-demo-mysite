@@ -1,0 +1,8 @@
+target/
+crx-quickstart/
+node_modules/
+.m2/
+.vscode/
+.git/
+*.log
+.DS_Store

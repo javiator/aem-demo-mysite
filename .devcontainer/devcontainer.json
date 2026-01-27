@@ -1,0 +1,28 @@
+{
+    "name": "AEM Dev",
+    "dockerComposeFile": [
+        "../docker-compose.yml"
+    ],
+    "service": "aem-author",
+    "workspaceFolder": "/workspaces/aem-demo-mysite",
+    "forwardPorts": [
+        4502,
+        4503
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "redhat.java",
+                "vscjava.vscode-maven",
+                "vscjava.vscode-java-pack",
+                "vscjava.vscode-java-debug",
+                "vscjava.vscode-java-test",
+                "dbaeumer.vscode-eslint"
+            ]
+        }
+    },
+    "mounts": [
+        "source=${localWorkspaceFolder}/.m2,target=/root/.m2,type=bind"
+    ],
+    "postCreateCommand": "mvn clean install -DskipTests"
+}
