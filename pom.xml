@@ -308,14 +308,14 @@
                 
                 
                 <requireJavaVersion>
-                                                                                          
-                  
-                  
-                  <message>Maven must be executed with a Java 8 JRE or higher.</message>
-                                                                                          
-                  
-                  
-                  <version>1.8.0</version>
+
+
+
+                  <message>Maven must be executed with a Java 21 JRE or higher.</message>
+
+
+
+                  <version>21</version>
                                                                                       
                 
                 
@@ -360,14 +360,14 @@
         
         
         <configuration>
-                                                  
-          
-          
-          <source>1.8</source>
-                                                  
-          
-          
-          <target>1.8</target>
+
+
+
+          <source>21</source>
+
+
+
+          <target>21</target>
                                               
         
         
